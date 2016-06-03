@@ -118,6 +118,7 @@ The `google-map-static` element fetches a map from the Google Static Maps API.
 			 */
 			apiKey: {
 				type: String,
+                value: ""
 			},
 			/**
 			 * URL to a placeholder image to display while the API is busy.
@@ -139,7 +140,7 @@ The `google-map-static` element fetches a map from the Google Static Maps API.
 			url = "https://maps.googleapis.com/maps/api/staticmap?";
 			args = [];
 
-			if(this.apiKey) args.push("key=" + this.apiKey);
+            if(this.apiKey.length > 0) args.push("key=" + this.apiKey);
 			else {
 				console.warn("google-map-static: api-key not specified");
 			}
